@@ -4,8 +4,18 @@
     return $bmi = $weight / pow($height, 2);
   }
 
-  echo "Mein BMI ist ". bmicalc(102, 1.83);
+  $bmi= bmicalc(103, 1.83);
 
-  
+  if ($bmi > 25) {
+    echo "Dein BMI ist " . $bmi . ". Du bist eine fette Sau";
+  } else {
+    echo "Schwein gehabt";
+  }
+
+
+
+
+
+
 
 ?>

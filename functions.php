@@ -9,7 +9,6 @@
 
   hallo();
 
-
   function summe($x){
     if($x == 0){
       return 0;
@@ -18,6 +17,6 @@
     return summe($x - 1) + $x;
   }
 
-  echo summe(5);
+  echo "Das Endergebnis ist: " . summe(5);
 
 ?>
