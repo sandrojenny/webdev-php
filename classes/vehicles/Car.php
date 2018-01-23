@@ -3,6 +3,11 @@
 /**
  *  Class Car
  */
+
+namespace app\vehicles;
+
+use app\cms\User as cmsUser;
+
 class Car {
   private $brand;
   private $ps;
@@ -21,7 +26,9 @@ class Car {
   }
 
   public function drive($locationA, $locationB){
-    echo "A " . $this->extColor . " " . $this->brand . " drives with " . $this->ps . " PS from " . $locationA . " to " . $locationB . ".<br>";
+    $user = new cmsUser();
+    $driver = $user->getUsername("Sandro");
+    echo $driver ." " . $this->extColor . " " . $this->brand . " drives with " . $this->ps . " PS from " . $locationA . " to " . $locationB . ".<br>";
   }
 
 }
