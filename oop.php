@@ -1,26 +1,37 @@
 <?php
 
-  class jobCalculator {
+  /**
+   *  Class Car
+   */
+  class Car {
+    private $brand;
+    private $ps;
+    private $extColor;
+    private $intColor;
 
-    function __construct()
+    public function __construct($brand, $ps)
     {
-      echo "Welcome to the Job Calculator.<br>";
+      $this->brand = $brand;
+      $this->ps = $ps;
     }
 
-    function workingTime($start, $end, $break){
-      return $workingTime = ($end - $start) - $break;
+    public function setDesign($extColor, $intColor){
+      $this->extColor = $extColor;
+      $this->intColor = $intColor;
     }
 
-    function calcOffer($time, $costs = 160){
-      echo "Offer: " . $time . " hours for 160.-/h = CHF " . $time * $costs . ".–<br>";
+    public function drive($locationA, $locationB){
+      echo "The " . $this->extColor . " " . $this->brand . " drives with " . $this->ps . " PS from " . $locationA . " to " . $locationB . ".<br>";
     }
 
   }
 
-  $workingday = new jobCalculator();
+  $audi = new Car("Audi Q3", 170);
+  $audi->setDesign("black", "blue");
+  $audi->drive("Fribourg", "Bern");
 
-  echo "My working time today was: <b>" . $workingday->workingTime(7, 18, 2) . " hour(s)</b><br>";
-  $workingday->calcOffer(5);
+
+
 
 
 ?>
