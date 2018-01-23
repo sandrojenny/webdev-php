@@ -1,37 +1,19 @@
 <?php
 
-  /**
-   *  Class Car
-   */
-  class Car {
-    private $brand;
-    private $ps;
-    private $extColor;
-    private $intColor;
-
-    public function __construct($brand, $ps)
-    {
-      $this->brand = $brand;
-      $this->ps = $ps;
+  function autoload($className){
+    if (file_exists("classes/{$className}.php")) {
+      require_once("classes/{$className}.php");
     }
-
-    public function setDesign($extColor, $intColor){
-      $this->extColor = $extColor;
-      $this->intColor = $intColor;
-    }
-
-    public function drive($locationA, $locationB){
-      echo "The " . $this->extColor . " " . $this->brand . " drives with " . $this->ps . " PS from " . $locationA . " to " . $locationB . ".<br>";
-    }
-
   }
+
+  spl_autoload_register("autoload");
 
   $audi = new Car("Audi Q3", 170);
   $audi->setDesign("black", "blue");
   $audi->drive("Fribourg", "Bern");
 
-
-
-
+  $porsche = new SuperCar("Porsche", 300);
+  $porsche->setDesign("yellow", "black");
+  $porsche->drive("Zurich", "Geneva");
 
 ?>
