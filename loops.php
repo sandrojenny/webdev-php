@@ -17,12 +17,27 @@
     )
   );
 
-  foreach ($actionheros as $groupe => $heros) {
-    echo "<ul><b>" . $groupe . "</b>";
-    foreach ($heros as $key => $value) {
-      echo "<li>" . $value . "</li>";
-    }
+  foreach ($actionheros as $group => $heros) {
+    echo "<ul><b>";
+      echo $group . "</b>";
+      foreach ($heros as $key => $hero) {
+        echo "<li>";
+        echo $hero;
+        echo "</li>";
+      }
     echo "</ul>";
+  }
+
+  for($i = 1; $i < 31; $i++){
+    echo $i . ", ";
+  }
+
+  echo "<br>";
+
+  $a = 0;
+  while($a < 30){
+    $a++;
+    echo $a . ", ";
   }
 
 ?>
